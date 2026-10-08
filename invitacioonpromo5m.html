@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promo Adhys 2026 🎓 | Politécnico Regional del Centro</title>
-    
+    <title>Promo Adhys 2026 | Politécnico Regional del Centro</title>
+
     <!-- Fuentes Elegantes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <!-- Librería para el efecto Confeti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -32,91 +30,167 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: radial-gradient(circle at top, #1e293b, #0f172a);
+            background-color: var(--primary);
             color: var(--text-light);
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
             padding: 20px;
+            background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 80%);
         }
 
-        /* Tarjeta Contenedora Principal */
         .container {
             max-width: 600px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 40px 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .badge-colegio {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--accent-light);
-            border: 1px solid var(--accent);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         h1, h2, h3 {
             font-family: 'Cinzel', serif;
             color: var(--accent);
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-        }
-
-        .seccion-grado {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--accent-light);
             margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+        h1 { font-size: 2rem; }
+        p { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 20px; }
 
-        /* Contador Regresivo */
-        .countdown-container {
+        /* Estilos de la Cuenta Regresiva */
+        .countdown {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin: 30px 0;
+            gap: 15px;
+            margin: 25px 0;
         }
 
-        .time-block {
-            background: rgba(0, 0, 0, 0.3);
+        .time-box {
+            background: var(--card-bg);
             border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 12px;
-            min-width: 70px;
+            border-radius: 8px;
+            padding: 10px;
+            min-width: 65px;
         }
 
-        .time-block span {
+        .time-box span {
             display: block;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--accent-light);
         }
 
-        .time-block label {
-            font-size: 0.75rem;
+        .time-box label {
+            font-size: 0.65rem;
             text-transform: uppercase;
-            opacity: 0.8;
+            letter-spacing: 1px;
+            color: #94a3b8;
         }
+
+        /* Botón de Google Maps */
+        .location-section {
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px dashed rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .btn-map:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 0.85rem;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+        }
+
+        option {
+            background-color: #0f172a;
+            color: #fff;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: var(--primary);
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        #mensaje-confirmacion {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .exito { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; }
+        .error { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
 
         /* Botón Flotante de Música */
         .music-btn {
@@ -126,208 +200,120 @@
             background: var(--accent);
             color: var(--primary);
             border: none;
-            width: 50px;
-            height: 50px;
             border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
             cursor: pointer;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 100;
+            transition: transform 0.2s;
         }
 
-        /* Estilos del Formulario RSVP */
-        .rsvp-section {
-            margin-top: 35px;
-            padding-top: 25px;
-            border-top: 1px dashed rgba(212, 175, 55, 0.3);
-        }
-
-        .rsvp-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 450px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group label {
-            font-size: 0.85rem;
-            color: var(--accent-light);
-            font-weight: 600;
-        }
-
-        .rsvp-form input, 
-        .rsvp-form select,
-        .rsvp-form textarea {
-            padding: 12px 15px;
-            border-radius: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            background: rgba(15, 23, 42, 0.7);
-            color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .rsvp-form input:focus, 
-        .rsvp-form select:focus,
-        .rsvp-form textarea:focus {
-            border-color: var(--accent);
-        }
-
-        /* Botón de Enviar */
-        .btn-submit {
-            background: linear-gradient(135deg, #d4af37, #aa7c11);
-            color: #000;
-            font-weight: 700;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        #mensajeEstado {
-            margin-top: 15px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-align: center;
+        .music-btn:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
 
-    <!-- Botón Flotante para Música -->
-    <button class="music-btn" onclick="toggleAudio()" title="Activar/Pausar música">🎵</button>
-    
-    <!-- Audio de Fondo -->
+    <div class="container">
+        <h1>PROMO ADHYS 2026</h1>
+        <p>I.E. Politécnico Regional del Centro - 5to M</p>
+
+        <!-- Cuenta Regresiva -->
+        <div class="countdown">
+            <div class="time-box"><span id="days">00</span><label>Días</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
+        </div>
+
+        <!-- Sección de Ubicación con Botón a Google Maps -->
+        <div class="location-section">
+            <h3>📍 Lugar del Evento</h3>
+            <p style="margin-bottom: 12px; font-size: 0.85rem;">Local Recepciones "El Dorado" / El Tambo, Huancayo</p>
+            
+            <!-- CAMBIA EL ENLACE DE ABAJO POR EL LINK DE TU LOCAL EN GOOGLE MAPS -->
+            <a href="https://maps.app.goo.gl/YcQLvxysGjAZB7RcA" target="_blank" class="btn-map">
+                🗺️ Ver Ubicación en Google Maps
+            </a>
+        </div>
+
+        <!-- Formulario RSVP -->
+        <h2>Confirmar Asistencia</h2>
+        <form id="rsvpForm">
+            <div>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+            </div>
+
+            <div>
+                <label for="telefono">Número de WhatsApp:</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 987654321">
+            </div>
+
+            <div>
+                <label for="asistencia">¿Asistirás a la ceremonia/fiesta?</label>
+                <select id="asistencia" name="asistencia" required>
+                    <option value="Sí, asistiré">¡Sí, ahí estaré!</option>
+                    <option value="No podré asistir">Lo siento, no podré asistir</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="acompanantes">Número de acompañantes:</label>
+                <input type="number" id="acompanantes" name="acompanantes" min="0" max="5" value="0">
+            </div>
+
+            <button type="submit" class="btn-submit">Confirmar Registro</button>
+        </form>
+
+        <div id="mensaje-confirmacion"></div>
+    </div>
+
+    <!-- Reproductor de Música Oculto -->
     <audio id="bgMusic" loop>
         <source src="Immortals.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="container">
-        <!-- Distintivo Institucional -->
-        <div class="badge-colegio">I.E. Politécnico Regional del Centro - El Tambo</div>
-
-        <h1>PROMO ADHYS 2026</h1>
-        <div class="seccion-grado">5.° "M"</div>
-        
-        <p>✨ Acompáñanos a celebrar el fin de una gran etapa y el inicio de un gran camino ✨</p>
-
-        <!-- Contador Regresivo -->
-        <h2>FALTAN POCOS DÍAS</h2>
-        <div class="countdown-container">
-            <div class="time-block"><span id="days">00</span><label>Días</label></div>
-            <div class="time-block"><span id="hours">00</span><label>Horas</label></div>
-            <div class="time-block"><span id="minutes">00</span><label>Min</label></div>
-            <div class="time-block"><span id="seconds">00</span><label>Seg</label></div>
-        </div>
-
-        <!-- FORMULARIO DE ASISTENCIA -->
-        <div class="rsvp-section">
-            <h2>💌 CONFIRMA TU ASISTENCIA</h2>
-            <p style="font-size: 0.9rem; opacity: 0.9;">Por favor, completa los datos para registrar tu lugar:</p>
-
-            <form id="rsvpForm" class="rsvp-form">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="telefono">Número de WhatsApp:</label>
-                    <input type="tel" id="telefono" placeholder="Ej. 987654321" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="asistencia">¿Asistirás a la ceremonia/fiesta?</label>
-                    <select id="asistencia" required>
-                        <option value="Sí, asistiré">¡Sí, ahí estaré! 🎉</option>
-                        <option value="No podré asistir">Lamentablemente no podré asistir 😢</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="acompanantes">Número de acompañantes:</label>
-                    <input type="number" id="acompanantes" min="0" max="5" value="0">
-                </div>
-
-                <button type="submit" class="btn-submit">
-                    ✨ Confirmar Registro
-                </button>
-            </form>
-
-            <p id="mensajeEstado"></p>
-        </div>
-    </div>
+    <!-- Botón Flotante para la Música -->
+    <button id="musicToggle" class="music-btn" onclick="toggleAudio()">🎵</button>
 
     <script>
-        // 1. Contador Regresivo (26 de Diciembre 2026 - 12:00 PM)
-        const fechaEvento = new Date("December 26, 2026 12:00:00").getTime();
+        // Lógica de Cuenta Regresiva (26 Dic 2026 12:00 PM)
+        const targetDate = new Date("2026-12-26T12:00:00").getTime();
 
-        function actualizarContador() {
-            const ahora = new Date().getTime();
-            const diferencia = fechaEvento - ahora;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
 
-            if (diferencia > 0) {
-                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            if (difference > 0) {
+                const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-                document.getElementById("days").textContent = dias < 10 ? "0" + dias : dias;
-                document.getElementById("hours").textContent = horas < 10 ? "0" + horas : horas;
-                document.getElementById("minutes").textContent = minutos < 10 ? "0" + minutos : minutos;
-                document.getElementById("seconds").textContent = segundos < 10 ? "0" + segundos : segundos;
+                document.getElementById("days").innerText = d < 10 ? '0' + d : d;
+                document.getElementById("hours").innerText = h < 10 ? '0' + h : h;
+                document.getElementById("minutes").innerText = m < 10 ? '0' + m : m;
+                document.getElementById("seconds").innerText = s < 10 ? '0' + s : s;
             }
         }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
 
-        setInterval(actualizarContador, 1000);
-        actualizarContador();
+        // Lógica del Formulario RSVP conectado al Webhook de Producción
+        const form = document.getElementById('rsvpForm');
+        const mensaje = document.getElementById('mensaje-confirmacion');
 
-        // 2. Control de Música
-        const audio = document.getElementById("bgMusic");
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
-
-        // 3. Envío de datos hacia n8n
-        const N8N_WEBHOOK_URL = "https://webhook.polirc.edu.pe/webhook/asistencia-promo"; 
-
-        document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const mensajeP = document.getElementById('mensajeEstado');
-            mensajeP.style.color = "#d4af37";
-            mensajeP.textContent = "Enviando tu confirmación...";
-
-            const datosInvito = {
-                colegio: "I.E. Politécnico Regional del Centro - El Tambo",
-                seccion: "5M",
+            const payload = {
                 nombre: document.getElementById('nombre').value,
                 telefono: document.getElementById('telefono').value,
                 asistencia: document.getElementById('asistencia').value,
@@ -335,29 +321,54 @@
                 fecha_registro: new Date().toLocaleString("es-PE")
             };
 
+            mensaje.style.display = 'block';
+            mensaje.className = '';
+            mensaje.innerText = 'Enviando confirmación...';
+
             try {
-                const respuesta = await fetch(N8N_WEBHOOK_URL, {
+                const response = await fetch('https://n8n.polirc.edu.pe/webhook/asistencia-promo', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(datosInvito)
+                    body: JSON.stringify(payload)
                 });
 
-                confetti({
-                    particleCount: 120,
-                    spread: 80,
-                    origin: { y: 0.6 }
-                });
-
-                mensajeP.style.color = "#4ade80";
-                mensajeP.textContent = "¡Gracias por confirmar! Tu respuesta se ha guardado con éxito. ✨";
-                document.getElementById('rsvpForm').reset();
-
-            } catch (error) {
-                console.error("Error al conectar:", error);
-                mensajeP.style.color = "#f87171";
-                mensajeP.textContent = "Hubo un problema al enviar tu confirmación. Inténtalo nuevamente.";
+                if (response.ok) {
+                    mensaje.className = 'exito';
+                    mensaje.innerText = '¡Gracias! Tu asistencia ha sido registrada con éxito.';
+                    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                    form.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                mensaje.className = 'error';
+                mensaje.innerText = 'Hubo un problema al enviar tu confirmación. Inténtalo nuevamente.';
             }
         });
+
+        // Lógica para reproducir/pausar la música
+        const audio = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicToggle');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                musicBtn.innerText = '🔊';
+            } else {
+                audio.pause();
+                musicBtn.innerText = '🎵';
+            }
+        }
+
+        // Iniciar música al interactuar por primera vez con la página
+        document.addEventListener('click', function initAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    musicBtn.innerText = '🔊';
+                }).catch(() => {});
+            }
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
     </script>
 </body>
 </html>
